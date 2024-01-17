@@ -1,0 +1,7 @@
+.albumBox div {
+    display: inline-block;
+    margin: 5px;
+    border-radius: 10px;
+    max-height: 330px;
+}
+

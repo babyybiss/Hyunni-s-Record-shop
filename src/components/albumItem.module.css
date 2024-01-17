@@ -1,0 +1,11 @@
+.albumItem {
+    width: 300px;
+    background-color: beige;
+    cursor: pointer;
+    color: rgb(248, 122, 143);
+}
+
+.albumItem:hover {
+    background-color: rgb(248, 122, 143);
+    color: beige;
+}

@@ -1,0 +1,272 @@
+[
+    {
+        "albumCode": 7,
+        "artistName": "Billie Eilish",
+        "albumTitle": "Happier Than Ever",
+        "releaseYear": 2021,
+        "genre": "Pop",
+        "price": 13.99,
+        "coverImage": "/images/album17.jpg"
+    },
+    {
+        "albumCode": 8,
+        "artistName": "Drake",
+        "albumTitle": "Certified Lover Boy",
+        "releaseYear": 2021,
+        "genre": "Hip-Hop",
+        "price": 14.99,
+        "coverImage": "/images/album18.jpg"
+    },
+    {
+        "albumCode": 9,
+        "artistName": "Ariana Grande",
+        "albumTitle": "Positions",
+        "releaseYear": 2020,
+        "genre": "Pop",
+        "price": 12.99,
+        "coverImage": "/images/album19.jpg"
+    },
+    {
+        "albumCode": 1,
+        "artistName": "Adele",
+        "albumTitle": "30",
+        "releaseYear": 2021,
+        "genre": "Pop",
+        "price": 14.99,
+        "coverImage": "/images/album11.jpg"
+    },
+    {
+        "albumCode": 2,
+        "artistName": "Ed Sheeran",
+        "albumTitle": "Equals",
+        "releaseYear": 2021,
+        "genre": "Pop",
+        "price": 13.99,
+        "coverImage": "/images/album12.jpg"
+    },
+    {
+        "albumCode": 3,
+        "artistName": "Taylor Swift",
+        "albumTitle": "Folklore",
+        "releaseYear": 2020,
+        "genre": "Folk",
+        "price": 12.99,
+        "coverImage": "/images/album13.jpg"
+    },
+    {
+        "albumCode": 4,
+        "artistName": "Dua Lipa",
+        "albumTitle": "Future Nostalgia",
+        "releaseYear": 2020,
+        "genre": "Pop",
+        "price": 11.99,
+        "coverImage": "/images/album14.jpg"
+    },
+    {
+        "albumCode": 5,
+        "artistName": "BTS",
+        "albumTitle": "Map of the Soul: 7",
+        "releaseYear": 2020,
+        "genre": "K-Pop",
+        "price": 15.99,
+        "coverImage": "/images/album15.jpg"
+    },
+    {
+        "albumCode": 6,
+        "artistName": "The Weeknd",
+        "albumTitle": "After Hours",
+        "releaseYear": 2020,
+        "genre": "R&B",
+        "price": 14.99,
+        "coverImage": "/images/album16.jpg"
+    },
+    {
+        "albumCode": 10,
+        "artistName": "Kendrick Lamar",
+        "albumTitle": "DAMN.",
+        "releaseYear": 2017,
+        "genre": "Hip-Hop",
+        "price": 13.99,
+        "coverImage": "/images/album20.jpg"
+    },
+    {
+        "albumCode": 11,
+        "artistName": "Lady Gaga",
+        "albumTitle": "Chromatica",
+        "releaseYear": 2020,
+        "genre": "Pop",
+        "price": 12.99,
+        "coverImage": "/images/album21.jpg"
+    },
+    {
+        "albumCode": 12,
+        "artistName": "Justin Bieber",
+        "albumTitle": "Justice",
+        "releaseYear": 2021,
+        "genre": "Pop",
+        "price": 13.99,
+        "coverImage": "/images/album22.jpg"
+    },
+    {
+        "albumCode": 13,
+        "artistName": "Harry Styles",
+        "albumTitle": "Fine Line",
+        "releaseYear": 2019,
+        "genre": "Pop",
+        "price": 11.99,
+        "coverImage": "/images/album23.jpg"
+    },
+    {
+        "albumCode": 14,
+        "artistName": "Lorde",
+        "albumTitle": "Solar Power",
+        "releaseYear": 2021,
+        "genre": "Pop",
+        "price": 14.99,
+        "coverImage": "/images/album24.jpg"
+    },
+    {
+        "albumCode": 15,
+        "artistName": "Doja Cat",
+        "albumTitle": "Planet Her",
+        "releaseYear": 2021,
+        "genre": "Pop",
+        "price": 13.99,
+        "coverImage": "/images/album25.jpg"
+    },
+    {
+        "albumCode": 16,
+        "artistName": "Travis Scott",
+        "albumTitle": "Astroworld",
+        "releaseYear": 2018,
+        "genre": "Hip-Hop",
+        "price": 15.99,
+        "coverImage": "/images/album26.jpg"
+    },
+    {
+        "albumCode": 17,
+        "artistName": "Rihanna",
+        "albumTitle": "Anti",
+        "releaseYear": 2016,
+        "genre": "R&B",
+        "price": 12.99,
+        "coverImage": "/images/album27.jpg"
+    },
+    {
+        "albumCode": 18,
+        "artistName": "Kanye West",
+        "albumTitle": "Donda",
+        "releaseYear": 2021,
+        "genre": "Hip-Hop",
+        "price": 14.99,
+        "coverImage": "/images/album28.jpg"
+    },
+    {
+        "albumCode": 19,
+        "artistName": "Beyoncé",
+        "albumTitle": "Lemonade",
+        "releaseYear": 2016,
+        "genre": "R&B",
+        "price": 12.99,
+        "coverImage": "/images/album29.jpg"
+    },
+    {
+        "albumCode": 20,
+        "artistName": "Adele",
+        "albumTitle": "25",
+        "releaseYear": 2015,
+        "genre": "Pop",
+        "price": 14.99,
+        "coverImage": "/images/album30.jpg"
+    },
+    {
+        "albumCode": 21,
+        "artistName": "Lil Nas X",
+        "albumTitle": "Montero",
+        "releaseYear": 2021,
+        "genre": "Hip-Hop",
+        "price": 13.99,
+        "coverImage": "/images/album31.jpg"
+    },
+    {
+        "albumCode": 22,
+        "artistName": "Megan Thee Stallion",
+        "albumTitle": "Good News",
+        "releaseYear": 2020,
+        "genre": "Hip-Hop",
+        "price": 12.99,
+        "coverImage": "/images/album32.jpg"
+    },
+    {
+        "albumCode": 23,
+        "artistName": "Ariana Grande",
+        "albumTitle": "Sweetener",
+        "releaseYear": 2018,
+        "genre": "Pop",
+        "price": 11.99,
+        "coverImage": "/images/album33.jpg"
+    },
+    {
+        "albumCode": 24,
+        "artistName": "The Kid LAROI",
+        "albumTitle": "F*ck Love",
+        "releaseYear": 2020,
+        "genre": "Hip-Hop",
+        "price": 14.99,
+        "coverImage": "/images/album34.jpg"
+    },
+    {
+        "albumCode": 25,
+        "artistName": "Alicia Keys",
+        "albumTitle": "Alicia",
+        "releaseYear": 2020,
+        "genre": "R&B",
+        "price": 13.99,
+        "coverImage": "/images/album35.jpg"
+    },
+    {
+        "albumCode": 26,
+        "artistName": "Travis Barker",
+        "albumTitle": "Tickets to My Downfall",
+        "releaseYear": 2020,
+        "genre": "Rock",
+        "price": 15.99,
+        "coverImage": "/images/album36.jpg"
+    },
+    {
+        "albumCode": 27,
+        "artistName": "Billie Eilish",
+        "albumTitle": "When We All Fall Asleep, Where Do We Go?",
+        "releaseYear": 2019,
+        "genre": "Pop",
+        "price": 12.99,
+        "coverImage": "/images/album37.jpg"
+    },
+    {
+        "albumCode": 28,
+        "artistName": "Travis Scott",
+        "albumTitle": "Birds in the Trap Sing McKnight",
+        "releaseYear": 2016,
+        "genre": "Hip-Hop",
+        "price": 14.99,
+        "coverImage": "/images/album38.jpg"
+    },
+    {
+        "albumCode": 29,
+        "artistName": "Selena Gomez",
+        "albumTitle": "Rare",
+        "releaseYear": 2020,
+        "genre": "Pop",
+        "price": 11.99,
+        "coverImage": "/images/album39.jpg"
+    },
+    {
+        "albumCode": 30,
+        "artistName": "Drake",
+        "albumTitle": "Scorpion",
+        "releaseYear": 2018,
+        "genre": "Hip-Hop",
+        "price": 13.99,
+        "coverImage": "/images/album40.jpg"
+    }
+]
