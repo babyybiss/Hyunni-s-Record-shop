@@ -10,7 +10,7 @@ function AlbumItem ({album}) {
                 <h1 style={{margin: 0}}>{album.albumTitle}</h1>
                 <span style={{fontSize: 20}}>{album.artistName}</span><br/>
                 <span>release Year: {album.releaseYear}</span>
-                <h2 style={{color: 'red'}}>${album.price}</h2>
+                {/*<h2 style={{color: 'red'}}>${album.price}</h2>*/}
             </div>
         </Link>
 

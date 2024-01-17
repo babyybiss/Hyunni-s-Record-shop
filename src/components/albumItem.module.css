@@ -1,11 +1,11 @@
 .albumItem {
     width: 300px;
-    background-color: beige;
+    background-color: 'lightPink';
     cursor: pointer;
-    color: rgb(248, 122, 143);
+    color: rgb(255, 232, 232);
 }
 
 .albumItem:hover {
-    background-color: rgb(248, 122, 143);
-    color: beige;
+    background-color: rgb(244, 175, 175);
+    color: rgb(0, 0, 0);
 }

@@ -21,16 +21,19 @@ useEffect(
 )
     return (
         <>
-            <h2>Pick out your favorite albums out of 100+ artists!</h2>
+            <br/>
             <div>
                 <input 
                     type='text'
                     name='albumTitle'
                     placeholder='Search ...'
                     onChange={(e) => {setSearchValue(e.target.value)}}
-                    style={{width: 300}}
-                />
-                <button onClick={onClickHandler}>Search</button>
+                    style={{width: 50+"%", height: 25+"px", borderRadius: 5+"px", border: "none", marginRight: 5+"px"}}
+                /> 
+                <button 
+                    onClick={onClickHandler}
+                    style={{height: 25+"px", borderRadius: 5+"px", borderColor: "white"}}
+                    >Search</button>
             </div>
 
             <div className={boxStyle.albumBox}>

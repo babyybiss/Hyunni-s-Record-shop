@@ -1,7 +1,9 @@
-import {NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import '../assets/Header.css';
 
 const activeStyle = {
-    color: 'lightPink'
+    color: 'white',
+    textDecoration: 'none'
 }
 
 function Navbar () {

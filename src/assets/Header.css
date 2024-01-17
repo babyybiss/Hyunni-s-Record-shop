@@ -1,0 +1,8 @@
+/* Import Sacramento font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+
+/* Apply Sacramento font to an element */
+.header {
+    font-family: 'Sacramento', cursive;
+
+}

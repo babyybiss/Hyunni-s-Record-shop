@@ -4,10 +4,10 @@ import Navbar from '../components/Navbar';
 
 const mainStyle = {
     textAlign: 'center',
-    backgroundColor: ' rgb(248, 122, 143)',
+    backgroundColor: 'rgb(196, 119, 119)',
     width: 100 + '%',
     height: 100 + '%',
-    color: 'beige'
+    color: 'rgb(255, 232, 232)',
 }
 function Layout () {
     return (
