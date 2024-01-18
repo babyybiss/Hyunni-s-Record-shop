@@ -1,7 +1,7 @@
 import { useSearchParams } from "react-router-dom";
 import boxStyle from '../components/albumItem.module.css';
 import {useState, useEffect} from 'react';
-import { searchAlbum } from "../api/ArtistAPI";
+//import { searchAlbum } from "../api/ArtistAPI";
 import AlbumItem from "../components/AlbumItem";
 
 function AlbumSearchResult () {
@@ -10,10 +10,7 @@ function AlbumSearchResult () {
     const [albumList, setAlbumList] = useState([]);
     const searchAlbumName = searchParam.get('albumTitle');
     
-    useEffect(() => {
-        setAlbumList(searchAlbum(searchAlbumName));
-    }, []
-    ) 
+  
 
 
 

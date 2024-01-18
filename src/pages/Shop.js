@@ -1,14 +1,18 @@
 import {useState, useEffect} from 'react';
-import { getAlbumList } from '../api/ArtistAPI';
+//import { getAlbumList } from '../api/ArtistAPI';
 import AlbumItem from '../components/AlbumItem';
 import boxStyle from './album.module.css'
 import {useNavigate} from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { callGetAlbumsAPI } from '../api/AlbumAPI';
+
 
 function Shop({favorites}) {
 
 const [searchValue, setSearchValue] = useState('');
 const [albumList, setAlbumList] = useState([]);
 const navigate = useNavigate();
+const dispatch = useDispatch();
 
 const onClickHandler = () => {
     navigate(`/shop/search?albumTitle=${searchValue}`);
@@ -16,9 +20,12 @@ const onClickHandler = () => {
 
 useEffect(
     () => {
-        setAlbumList(getAlbumList);
-    }
-)
+        dispatch(callGetAlbumsAPI('viewAll'));
+        console.log("calling albums");
+        //setAlbumList(getAlbumList);
+    },[]
+);
+
     return (
         <>
             <br/>
@@ -36,10 +43,10 @@ useEffect(
                     >Search</button>
             </div>
 
-            <div className={boxStyle.albumBox}>
+            {/*<div className={boxStyle.albumBox}>
                 <img src={albumList.coverImage} style={{maxWidth: 300}} />
                 { albumList.map(album => <AlbumItem key={album.albumCode} album={album} />)};
-            </div>
+            </div>*/}
         </>
     );
 }

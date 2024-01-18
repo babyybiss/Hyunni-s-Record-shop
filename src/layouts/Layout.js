@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import Navbar from '../components/Navbar';
 
 const mainStyle = {
+    
     textAlign: 'center',
     backgroundColor: 'rgb(196, 119, 119)',
     width: 100 + '%',
