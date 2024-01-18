@@ -1,9 +1,17 @@
+import { NavLink } from 'react-router-dom';
+import '../assets/Header.css';
+
 function Header () {
+
+    const activeStyle = {
+        color: 'white',
+        textDecoration: 'none',
+    }
+
     return (
-        <div>
-            <h1>☁️ Hyunni's online Album store ☁️</h1>
-            <h3 style={{marginTop: 5}}>with just one click of a button, right at your doorsteps 💌</h3>
-        </div>
+        <NavLink to="/main" className='header' style={(isActive) => isActive? activeStyle : undefined}>
+            <h1> Hyunni Records </h1>
+        </NavLink>
     )
 }
 

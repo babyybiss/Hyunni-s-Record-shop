@@ -1,6 +1,6 @@
 import {useParams} from 'react-router-dom';
 import {useState, useEffect} from 'react';
-import { getAlbumDetails } from '../api/ArtistAPI';
+//import { getAlbumDetails } from '../api/ArtistAPI';
 import {useNavigate} from 'react-router-dom';
 
 function AlbumDetails() {
@@ -37,13 +37,6 @@ const checkbuttonHandler = () => {
     }
 
 };
-
-
-useEffect ( () => {
-    setAlbum(getAlbumDetails(albumCode));
-    console.log('brought?: ' , album);
-},[albumCode]
-);
 
 
 useEffect(() => {
