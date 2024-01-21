@@ -2,7 +2,7 @@ import { useSearchParams } from "react-router-dom";
 import boxStyle from '../components/albumItem.module.css';
 import {useState, useEffect} from 'react';
 //import { searchAlbum } from "../api/ArtistAPI";
-import AlbumItem from "../components/AlbumItem";
+import AlbumItem from "../components/Album/AlbumItem";
 
 function AlbumSearchResult () {
 

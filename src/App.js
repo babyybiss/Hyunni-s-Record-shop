@@ -1,7 +1,7 @@
 import './App.css';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Layout from './layouts/Layout';
-import Main from './pages/Main';
+import RegistAlbum from './pages/RegistAlbum';
 import MyPage from './pages/MyPage';
 import AlbumDetails from './pages/AlbumDetails';
 import AlbumSearchResult from './pages/AlbumSearchResult';
@@ -17,12 +17,11 @@ const [favorites, setFavorites] = useState(null);
       <Routes>
 
       <Route path="/" element={<Layout />} >
-        <Route index element={<Main />} />
-          <Route path="/main" element={<Main />} />
+        <Route index element={<Shop />} />
+          <Route path="/shop" element={<Shop />} />
           <Route path="/mypage" element={<MyPage />} />
-          <Route path="/shop" element={<Shop/>} />
           <Route path="/shoppingCart" element={<ShoppingCart favorites={favorites} />} />
-
+          <Route path="/regist" element={<RegistAlbum />} />
         <Route path="/shop">
           <Route index element={<Shop />} />
           <Route path=":albumCode" element={<AlbumDetails />} />

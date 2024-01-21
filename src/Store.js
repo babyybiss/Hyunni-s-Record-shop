@@ -1,11 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import rootReducer from "./RootReducer";
-import { composeWithDevTools } from 'redux-devtools-extension';
+import albumSlice from "./albumSlice";
 
 const store = configureStore({
-    reducer: rootReducer,
-    devTools: process.env.NODE_ENV !== 'production',
-    enhancers: composeWithDevTools(),
-});
-
+  reducer: {
+    albums: albumSlice
+  }
+})
 export default store;

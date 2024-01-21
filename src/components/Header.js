@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import '../assets/Header.css';
+import '../assets/css/Header.css';
 
 function Header () {
 
@@ -9,7 +9,7 @@ function Header () {
     }
 
     return (
-        <NavLink to="/main" className='header' style={(isActive) => isActive? activeStyle : undefined}>
+        <NavLink to="/shop" className='header' style={(isActive) => isActive? activeStyle : undefined}>
             <h1> Hyunni Records </h1>
         </NavLink>
     )

@@ -2,7 +2,7 @@ import { useLocation } from 'react-router-dom';
 
 function ShoppingCart() {
   const location = useLocation();
-  const favorites = location.state && location.state.favorites;
+  const favorites = location.state?.favorites;
 
   // Use the 'favorites' state in your ShoppingCart component
 

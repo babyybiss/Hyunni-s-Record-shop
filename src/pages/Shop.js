@@ -1,10 +1,11 @@
 import {useState, useEffect} from 'react';
 //import { getAlbumList } from '../api/ArtistAPI';
-import AlbumItem from '../components/AlbumItem';
+import AlbumItem from '../components/Album/AlbumItem';
 import boxStyle from './album.module.css'
 import {useNavigate} from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector, UseSelector } from 'react-redux';
 import { callGetAlbumsAPI } from '../api/AlbumAPI';
+import { getAlbums } from '../albumSlice';
 
 
 function Shop({favorites}) {
@@ -14,18 +15,22 @@ const [albumList, setAlbumList] = useState([]);
 const navigate = useNavigate();
 const dispatch = useDispatch();
 
+//extracting data using useSelector
+const albums = useSelector(state => state.albums?.results?.albumList || []);
+
 const onClickHandler = () => {
     navigate(`/shop/search?albumTitle=${searchValue}`);
 }
 
-useEffect(
-    () => {
-        dispatch(callGetAlbumsAPI('viewAll'));
-        console.log("calling albums");
-        //setAlbumList(getAlbumList);
-    },[]
-);
+const onRegistHandler = () => {
+    navigate('/regist');
+}
 
+useEffect(() => {
+    dispatch(callGetAlbumsAPI('viewAll'));
+}, [dispatch]);
+
+console.log(albums);
     return (
         <>
             <br/>
@@ -40,13 +45,19 @@ useEffect(
                 <button 
                     onClick={onClickHandler}
                     style={{height: 25+"px", borderRadius: 5+"px", borderColor: "white"}}
-                    >Search</button>
+                    >Search
+                </button>
+                <button 
+                    onClick={onRegistHandler}
+                    style={{height: 25+"px", borderRadius: 5+"px", borderColor: "white"}}
+                    >Regist
+                </button>
             </div>
 
-            {/*<div className={boxStyle.albumBox}>
-                <img src={albumList.coverImage} style={{maxWidth: 300}} />
-                { albumList.map(album => <AlbumItem key={album.albumCode} album={album} />)};
-            </div>*/}
+            <div className={boxStyle.albumBox}>
+                {/*<img src={albumList.coverImage} style={{maxWidth: 300}} />*/}
+                { albums.map(album => <AlbumItem key={album.albumCode} album={album} />)};
+            </div>
         </>
     );
 }
