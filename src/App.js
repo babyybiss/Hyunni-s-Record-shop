@@ -8,6 +8,7 @@ import AlbumSearchResult from './pages/AlbumSearchResult';
 import Shop from './pages/Shop';
 import ShoppingCart from './pages/ShoppingCart';
 import {useState} from 'react';
+import ModifyAlbum from './pages/ModifyAlbum';
 
 function App() {
 const [favorites, setFavorites] = useState(null);
@@ -19,15 +20,13 @@ const [favorites, setFavorites] = useState(null);
       <Route path="/" element={<Layout />} >
         <Route index element={<Shop />} />
           <Route path="/shop" element={<Shop />} />
+          <Route path="/shop/:albumCode" element={<AlbumDetails />} />
+          <Route path="/shop/search" element={<AlbumSearchResult />} />
           <Route path="/mypage" element={<MyPage />} />
           <Route path="/shoppingCart" element={<ShoppingCart favorites={favorites} />} />
           <Route path="/regist" element={<RegistAlbum />} />
-        <Route path="/shop">
-          <Route index element={<Shop />} />
-          <Route path=":albumCode" element={<AlbumDetails />} />
-          <Route path="search" element={<AlbumSearchResult />} />
+          <Route path="/modifyAlbum/:albumCode" element={<ModifyAlbum />} />
         </Route>
-      </Route>
       </Routes>
     </BrowserRouter>
   );

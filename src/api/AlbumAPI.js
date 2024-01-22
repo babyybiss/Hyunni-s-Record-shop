@@ -1,6 +1,6 @@
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { getAlbums, getAlbum, postAlbum } from "../albumSlice";
+import { getAlbums, getAlbum, getSearchResult, postAlbum, putAlbum, deleteAlbum } from "../albumSlice";
 
 const DOMAIN = 'http://localhost:8001'
 
@@ -26,7 +26,20 @@ export const callGetAlbumsAPI = createAsyncThunk('albums/callGetAlbumAPI', async
     }
 });
 
-export const getSpecificAlbumApi = createAsyncThunk('album/getSpecificAlbumApi', async (albumCode, { dispatch, getState }) => {
+export const callGetSearchResult = createAsyncThunk('album/getSearchResult', async (searchValue, { dispatch, getState }) => {
+    try {
+        console.log(searchValue);
+        const result = await request('GET', `/albums?sort=${searchValue}`);
+        console.log('getSearchResult : ', result);
+        dispatch(getSearchResult);
+    } catch (error) {
+        console.log('Error in API call: ', error);
+        throw error;
+    }
+});
+
+
+export const callGetSpecificAlbumApi = createAsyncThunk('album/getSpecificAlbumApi', async (albumCode, { dispatch, getState }) => {
     try {
         console.log(albumCode);
         const result = await request('GET', `/albums/${albumCode}`);
@@ -40,31 +53,32 @@ export const getSpecificAlbumApi = createAsyncThunk('album/getSpecificAlbumApi',
 
 export const callPostAlbum = createAsyncThunk('album/callPostAlbum', async ({form}, { dispatch, getState }) => {
     try {
-
-        // Create a FormData object
-        const formData = new FormData();
-        formData.append('title', form.get('title'));
-        formData.append('albumPrice', form.get('albumPrice'));
-        formData.append('artistName', form.get('artistName'));
-        formData.append('releaseDate', form.get('releaseDate'));
-        formData.append('genreCode', form.get('genreCode'));
-
-        console.log('[Album Registration]', formData.get("title"));
-        console.log('[Album Registration]', formData.get("albumPrice"));
-        console.log('[Album Registration]', formData.get("artistName"));
-        console.log('[Album Registration]', formData.get("releaseDate"));
-        console.log('[Album Registration]', formData.get("genreCode"));
-
-
-        // Append the image file to FormData
-        formData.append('imageFile', form.get('imageFile'));
-        console.log('[Album Registration]', formData.get("imageFile"));
-        const result = await request('POST', `/albums`, formData, {
-            // Assuming request is a function that handles your HTTP requests
-            
-        });
-
+        const result = await request('POST', `/albums`, form);
+        console.log('postAlbum result: ', result);
         dispatch(postAlbum(result));
+    } catch (error) {
+        console.error('Error in API call: ', error);
+        throw error;
+    }
+});
+
+export const callPutAlbum = createAsyncThunk('album/callPutAlbum', async ({form}, { dispatch, getState }) => {
+    try {
+        const result = await request('PUT', `/albums`, form);
+        console.log('putAlbum result: ', result);
+        dispatch(putAlbum(result));
+    } catch (error) {
+        console.error('Error in API call: ', error);
+        throw error;
+    }
+});
+
+export const callDeleteAlbum = createAsyncThunk('/album/callDeleteAlbum', async (albumCode, { dispatch, getState }) => {
+    try {
+        console.log("deleting albumCode : ", albumCode);
+        const result = await request('DELETE', `/albums/${albumCode}`);
+        console.log("(deleteAlbum result : ", result);
+        dispatch(deleteAlbum(result));
     } catch (error) {
         console.error('Error in API call: ', error);
         throw error;

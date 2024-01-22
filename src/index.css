@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
 
-html, body {
+body, button, input, select option {
   font-family: 'Space Mono', monospace;
   max-width: 100%;
   min-height: 100%;

@@ -23,6 +23,9 @@ function RegistAlbum () {
     })
 
     const onChangeHandler = (e) => {
+
+        const value = e.target.name === "genreCode" ? parseInt(e.target.value, 10) : e.target.value;
+
         setForm({
             ...form,
             [e.target.name] : e.target.name === "genreCode" ? parseInt(e.target.value, 10) : e.target.value
@@ -65,8 +68,7 @@ function RegistAlbum () {
             confirmButtonColor: '#1D7151',
             iconColor: '#1D7151'
         });
-        //navigate('/shop');
-        //window.location.reload();
+        navigate('/shop');
     }
 
     const onChangeImageUpload = (e) => {
@@ -117,16 +119,16 @@ function RegistAlbum () {
                 name="genreCode"
                 onChange={ onChangeHandler }
             >
-                <option value="1">pop</option>
-                <option value="2">hiphop</option>
-                <option value="3">R&B</option>
-                <option value="4">pop</option>
-                <option value="5">pop</option>
-                <option value="6">pop</option>
-                <option value="7">pop</option>
-                <option value="8">pop</option>
-                <option value="9">pop</option>
-                <option value="10">pop</option>
+                <option disabled>Pick a genre</option>
+                <option value="1">Pop</option>
+                <option value="2">R&B</option>
+                <option value="3">Hip Hop</option>
+                <option value="5">Rock</option>
+                <option value="6">Electronice</option>
+                <option value="7">Jazz</option>
+                <option value="8">Country</option>
+                <option value="9">Metal</option>
+                <option value="10">Classic</option>
             </select>
             <label>album release date</label><br/><input onChange={ onChangeHandler } type="date" name="releaseDate" required /><br/>
             <label>album cover <br/></label>
@@ -143,8 +145,9 @@ function RegistAlbum () {
             <button 
                 onClick={ onClickImageUpload }
                 className="button button-primary"
+                style={{margin: 0.5+"rem"}}
             >upload cover art
-            </button>
+            </button><br/>
             { imageUrl && <img
                                 style={{width: 20+"rem", height: 20+"rem"}}
                                 src={ imageUrl }

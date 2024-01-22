@@ -4,8 +4,7 @@ import AlbumItem from '../components/Album/AlbumItem';
 import boxStyle from './album.module.css'
 import {useNavigate} from 'react-router-dom';
 import { useDispatch, useSelector, UseSelector } from 'react-redux';
-import { callGetAlbumsAPI } from '../api/AlbumAPI';
-import { getAlbums } from '../albumSlice';
+import { callGetAlbumsAPI, callGetSearchResult } from '../api/AlbumAPI';
 
 
 function Shop({favorites}) {
@@ -18,35 +17,35 @@ const dispatch = useDispatch();
 //extracting data using useSelector
 const albums = useSelector(state => state.albums?.results?.albumList || []);
 
-const onClickHandler = () => {
-    navigate(`/shop/search?albumTitle=${searchValue}`);
-}
+/*const onClickHandler = () => {
+    dispatch(callGetSearchResult(searchValue))
+    //navigate(`/shop/search?albumTitle=${searchValue}`);
+}*/
 
 const onRegistHandler = () => {
     navigate('/regist');
 }
 
 useEffect(() => {
-    dispatch(callGetAlbumsAPI('viewAll'));
-}, [dispatch]);
+    if(searchValue){
+        dispatch(callGetAlbumsAPI(searchValue));
+    } else {
+        dispatch(callGetAlbumsAPI('viewAll'));
+    }
+}, [searchValue]);
 
 console.log(albums);
     return (
         <>
             <br/>
             <div>
-                <input 
-                    type='text'
-                    name='albumTitle'
-                    placeholder='Search ...'
-                    onChange={(e) => {setSearchValue(e.target.value)}}
-                    style={{width: 50+"%", height: 25+"px", borderRadius: 5+"px", border: "none", marginRight: 5+"px"}}
-                /> 
-                <button 
-                    onClick={onClickHandler}
-                    style={{height: 25+"px", borderRadius: 5+"px", borderColor: "white"}}
-                    >Search
-                </button>
+                    <input 
+                        type='text'
+                        name='albumTitle'
+                        placeholder='Search ...'
+                        onChange={(e) => {setSearchValue(e.target.value)}}
+                        style={{width: 50+"%", height: 25+"px", borderRadius: 5+"px", border: "none", marginRight: 5+"px"}}
+                    />
                 <button 
                     onClick={onRegistHandler}
                     style={{height: 25+"px", borderRadius: 5+"px", borderColor: "white"}}
