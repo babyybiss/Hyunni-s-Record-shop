@@ -5,7 +5,7 @@ import Navbar from '../components/Navbar';
 const mainStyle = {
     
     textAlign: 'center',
-    backgroundColor: 'rgb(196, 119, 119)',
+    backgroundColor: "#152339",
     width: 100 + '%',
     height: 100 + '%',
     color: 'rgb(255, 232, 232)',

@@ -1,5 +1,6 @@
 .albumItem {
     width: 300px;
+    height: 350px;
     background-color: 'lightPink';
     cursor: pointer;
     color: rgb(255, 232, 232);

@@ -1,10 +1,10 @@
 import {useState, useEffect} from 'react';
 //import { getAlbumList } from '../api/ArtistAPI';
-import AlbumItem from '../components/AlbumItem';
+import AlbumItem from '../components/Album/AlbumItem';
 import boxStyle from './album.module.css'
 import {useNavigate} from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { callGetAlbumsAPI } from '../api/AlbumAPI';
+import { useDispatch, useSelector, UseSelector } from 'react-redux';
+import { callGetAlbumsAPI, callGetSearchResult } from '../api/AlbumAPI';
 
 
 function Shop({favorites}) {
@@ -14,39 +14,49 @@ const [albumList, setAlbumList] = useState([]);
 const navigate = useNavigate();
 const dispatch = useDispatch();
 
-const onClickHandler = () => {
-    navigate(`/shop/search?albumTitle=${searchValue}`);
+//extracting data using useSelector
+const albums = useSelector(state => state.albums?.results?.albumList || []);
+
+/*const onClickHandler = () => {
+    dispatch(callGetSearchResult(searchValue))
+    //navigate(`/shop/search?albumTitle=${searchValue}`);
+}*/
+
+const onRegistHandler = () => {
+    navigate('/regist');
 }
 
-useEffect(
-    () => {
+useEffect(() => {
+    if(searchValue){
+        dispatch(callGetAlbumsAPI(searchValue));
+    } else {
         dispatch(callGetAlbumsAPI('viewAll'));
-        console.log("calling albums");
-        //setAlbumList(getAlbumList);
-    },[]
-);
+    }
+}, [searchValue]);
 
+console.log(albums);
     return (
         <>
             <br/>
             <div>
-                <input 
-                    type='text'
-                    name='albumTitle'
-                    placeholder='Search ...'
-                    onChange={(e) => {setSearchValue(e.target.value)}}
-                    style={{width: 50+"%", height: 25+"px", borderRadius: 5+"px", border: "none", marginRight: 5+"px"}}
-                /> 
+                    <input 
+                        type='text'
+                        name='albumTitle'
+                        placeholder='Search ...'
+                        onChange={(e) => {setSearchValue(e.target.value)}}
+                        style={{width: 50+"%", height: 25+"px", borderRadius: 5+"px", border: "none", marginRight: 5+"px"}}
+                    />
                 <button 
-                    onClick={onClickHandler}
+                    onClick={onRegistHandler}
                     style={{height: 25+"px", borderRadius: 5+"px", borderColor: "white"}}
-                    >Search</button>
+                    >Regist
+                </button>
             </div>
 
-            {/*<div className={boxStyle.albumBox}>
-                <img src={albumList.coverImage} style={{maxWidth: 300}} />
-                { albumList.map(album => <AlbumItem key={album.albumCode} album={album} />)};
-            </div>*/}
+            <div className={boxStyle.albumBox}>
+                {/*<img src={albumList.coverImage} style={{maxWidth: 300}} />*/}
+                { albums.map(album => <AlbumItem key={album.albumCode} album={album} />)};
+            </div>
         </>
     );
 }
