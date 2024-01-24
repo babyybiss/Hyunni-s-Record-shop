@@ -11,7 +11,9 @@ function Navbar () {
         <div>
             &emsp;&emsp;<span><NavLink to="/shop" style={(isActive) => isActive? activeStyle : undefined}>HOME</NavLink></span>&emsp;&emsp;|
             &emsp;&emsp;<span><NavLink to="/mypage" style={(isActive) => isActive? activeStyle : undefined}>MyPage</NavLink></span>&emsp;&emsp;|
-            &emsp;&emsp;<span><NavLink to="/ShoppingCart" style={(isActive) => isActive? activeStyle : undefined}>Shopping Cart</NavLink></span>
+            &emsp;&emsp;<span><NavLink to="/ShoppingCart" style={(isActive) => isActive? activeStyle : undefined}>Shopping Cart</NavLink></span>&emsp;&emsp;|
+            &emsp;&emsp;<span><NavLink to="/login" style={(isActive) => isActive? activeStyle : undefined}>Login</NavLink></span>&emsp;&emsp;|
+            &emsp;&emsp;<span><NavLink to="/register" style={(isActive) => isActive? activeStyle : undefined}>Register</NavLink></span>
 
         </div>
     );

@@ -5,9 +5,19 @@ import boxStyle from './album.module.css'
 import {useNavigate} from 'react-router-dom';
 import { useDispatch, useSelector, UseSelector } from 'react-redux';
 import { callGetAlbumsAPI, callGetSearchResult } from '../api/AlbumAPI';
+import { jwtDecode } from 'jwt-decode';
 
 
 function Shop({favorites}) {
+
+    try{
+        const token = localStorage.getItem('token');
+        const decodedToken = token ? jwtDecode(token) : null;
+    
+        console.log(decodedToken);
+    } catch(error) {
+        console.log("error: " + JSON.stringify(localStorage))
+    }
 
 const [searchValue, setSearchValue] = useState('');
 const [albumList, setAlbumList] = useState([]);
